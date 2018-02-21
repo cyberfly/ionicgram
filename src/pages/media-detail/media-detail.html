@@ -15,4 +15,46 @@
 
 <ion-content padding>
 
+  <!-- IONIC social card component -->
+  
+  <ion-card *ngFor="let media of medias">
+  
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="{{ media._embedded.author[0].avatar_urls[24] }}">
+      </ion-avatar>
+      <h2>{{ media._embedded.author[0].name }}</h2>
+      <p>{{ media.date }}</p>
+    </ion-item>
+  
+    <img src="{{ media.guid.rendered }}">
+  
+    <ion-card-content>
+      <div [innerHtml]="media.caption.rendered"></div>
+    </ion-card-content>
+  
+    <ion-row>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="thumbs-up"></ion-icon>
+          <div>12 Likes</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small (click)="showMediaDetail($event, media)">
+          <ion-icon name="text"></ion-icon>
+          <div>4 Comments</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          11h ago
+        </ion-note>
+      </ion-col>
+    </ion-row>
+  
+  </ion-card>
+  
+  <!-- end of IONIC social card component -->
+
 </ion-content>
