@@ -17,7 +17,7 @@
 
   <!-- IONIC social card component -->
   
-  <ion-card *ngFor="let media of medias">
+  <ion-card>
   
     <ion-item>
       <ion-avatar item-start>
@@ -41,7 +41,7 @@
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-left clear small (click)="showMediaDetail($event, media)">
+        <button ion-button icon-left clear small >
           <ion-icon name="text"></ion-icon>
           <div>4 Comments</div>
         </button>
