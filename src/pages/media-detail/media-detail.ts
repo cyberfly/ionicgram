@@ -15,7 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MediaDetailPage {
 
+  media: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    
+    //get media parameter from home list
+    this.media = this.navParams.get('media');
+
+    console.log('media detail -->', this.media);
   }
 
   ionViewDidLoad() {
