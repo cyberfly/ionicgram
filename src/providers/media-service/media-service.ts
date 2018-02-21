@@ -18,7 +18,8 @@ export class MediaServiceProvider {
 
   getMedia()
   {
-
+    let api_url = 'http://restapi.jomphp.com/wp-json/wp/v2/media';
+    return this.http.get(api_url);
   }
 
   //get single media detail from API
@@ -32,7 +33,7 @@ export class MediaServiceProvider {
 
   storeMedia()
   {
-    
+
   }
 
 }
