@@ -18,7 +18,20 @@ export class HomePage {
 
   getMediaList()
   {
-    console.log('try to get media list from API');
+    console.log('try to get media list from API, this.medias -->', this.medias);
+
+    this.mediaServiceProvider.getMediaList().subscribe(data => {
+
+      console.log('Fetched media list data -->' , data);
+
+      //assign fetched data to 
+
+      this.medias = data;
+
+      console.log('this.medias -->', this.medias);
+
+    });
+
   }
 
 }
