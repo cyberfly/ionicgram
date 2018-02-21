@@ -55,4 +55,11 @@ export class HomePage {
 
   }
 
+  //go to show media detail page
+
+  showMediaDetail(event, media)
+  {
+    console.log('navigate to show-detail page with media parameter -->', media);
+  }
+
 }
