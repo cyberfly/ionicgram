@@ -8,8 +8,17 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public mediaServiceProvider: MediaServiceProvider) {
+  medias: any;
 
+  constructor(public navCtrl: NavController, public mediaServiceProvider: MediaServiceProvider) {
+    
+    //call the function to get media list from API
+    this.getMediaList();
+  }
+
+  getMediaList()
+  {
+    console.log('try to get media list from API');
   }
 
 }
