@@ -16,7 +16,7 @@ export class MediaServiceProvider {
 
   //get list of uploaded media from API
 
-  getMedia()
+  getMediaList()
   {
     let api_url = 'http://restapi.jomphp.com/wp-json/wp/v2/media';
     return this.http.get(api_url);
