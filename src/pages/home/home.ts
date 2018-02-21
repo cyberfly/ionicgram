@@ -34,4 +34,25 @@ export class HomePage {
 
   }
 
+  //pull to refresh
+
+  doRefresh(refresher) {
+    console.log('Begin fetching latest media', refresher);
+
+    //call the mediaServiceProvider function to get latest media list from API
+    
+    this.mediaServiceProvider.getMediaList().subscribe(data => {
+
+      //assign fetched data to 
+
+      this.medias = data;
+
+      //hide loader pull to refresh  
+
+      refresher.complete();
+
+    });
+
+  }
+
 }

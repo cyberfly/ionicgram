@@ -5,6 +5,16 @@
 </ion-header>
 
 <ion-content padding>
+
+  <!-- ionic pull to refresh -->
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- end of pull to refresh -->
+
+
   <!-- IONIC social card component -->
 
   <ion-card *ngFor="let media of medias">
