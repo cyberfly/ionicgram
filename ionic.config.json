@@ -1,0 +1,8 @@
+{
+  "name": "ionicgram",
+  "app_id": "e96c8533",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
