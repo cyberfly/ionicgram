@@ -1,6 +1,7 @@
 import { MediaServiceProvider } from './../../providers/media-service/media-service';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MediaDetailPage } from '../media-detail/media-detail';
 
 @Component({
   selector: 'page-home',
@@ -60,6 +61,10 @@ export class HomePage {
   showMediaDetail(event, media)
   {
     console.log('navigate to show-detail page with media parameter -->', media);
+
+    //navigate to media-detail page
+
+    this.navCtrl.push(MediaDetailPage, { media: media });
   }
 
 }
