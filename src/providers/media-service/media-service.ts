@@ -18,7 +18,7 @@ export class MediaServiceProvider {
 
   getMediaList()
   {
-    let api_url = 'http://restapi.jomphp.com/wp-json/wp/v2/media';
+    let api_url = 'http://restapi.jomphp.com/wp-json/wp/v2/media?_embed';
     return this.http.get(api_url);
   }
 
