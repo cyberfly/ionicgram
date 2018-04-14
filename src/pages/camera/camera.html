@@ -23,4 +23,9 @@
 
   <img *ngIf="image_uri" src="{{ image_uri }}" alt="image" style="max-width: 100%; max-height: 300px;" >
 
+  <!-- upload button  -->
+  
+  <button ion-button full color="secondary" icon-left (click)="uploadImage()" [disabled]="!image_uri">
+    <ion-icon name="cloud-upload"></ion-icon> Upload</button>
+
 </ion-content>

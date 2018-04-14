@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
-import { FileTransfer } from '@ionic-native/file-transfer';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
 /**
  * Generated class for the CameraPage page.
@@ -44,6 +44,47 @@ export class CameraPage {
     }, (err) => {
       // Handle error
     });
+  }
+
+  //upload image to server
+
+  uploadImage() {
+
+    //create file transfer object
+    const fileTransfer: FileTransferObject = this.transfer.create();
+
+    //random int
+    var random = Math.floor(Math.random() * 100);
+
+    let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9yZXN0YXBpLmpvbXBocC5jb20iLCJpYXQiOjE1MjM3MTUyODMsIm5iZiI6MTUyMzcxNTI4MywiZXhwIjoxNTI0MzIwMDgzLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.NfsEMPA-Q0iH8zOkefS-e7GPBgStM5UXc-SP6e65cZc";
+    let bearer_token = "Bearer " + token;
+
+    console.log(bearer_token);
+
+    //option transfer
+    let options: FileUploadOptions = {
+      fileKey: 'file',
+      fileName: "myImage_" + random + ".jpg",
+      chunkedMode: false,
+      httpMethod: 'post',
+      mimeType: "image/jpeg",
+      headers: {
+        "Authorization": bearer_token
+      }
+    }
+
+    console.log('image upload started');
+
+    //file transfer action
+    fileTransfer.upload(this.image_uri, 'http://restapi.jomphp.com/wp-json/wp/v2/media', options)
+      .then((data) => {
+        console.log(data);
+        console.log("Success");
+      }, (err) => {
+        console.log(err);
+        console.log("Error");
+      });
+
   }
 
 }
