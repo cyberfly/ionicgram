@@ -16,6 +16,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MediaServiceProvider } from '../providers/media-service/media-service';
 import { Camera } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { File } from '@ionic-native/file';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     MediaServiceProvider,
     Camera,
-    File
+    File,
+    FileTransfer
   ]
 })
 export class AppModule {}
