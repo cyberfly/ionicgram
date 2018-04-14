@@ -14,6 +14,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MediaServiceProvider } from '../providers/media-service/media-service';
+import { Camera } from '@ionic-native/camera';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MediaServiceProvider } from '../providers/media-service/media-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    MediaServiceProvider
+    MediaServiceProvider,
+    Camera
   ]
 })
 export class AppModule {}
