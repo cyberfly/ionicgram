@@ -14,5 +14,13 @@
 
 
 <ion-content padding>
+  
+  <!-- open camera button -->
+  
+  <button ion-button full icon-left (click)="takePicture()" ><ion-icon name="camera"></ion-icon> Take Picture</button>
+
+  <!-- image preview -->
+
+  <img *ngIf="image_uri" src="{{ image_uri }}" alt="image" style="max-width: 100%; max-height: 300px;" >
 
 </ion-content>
