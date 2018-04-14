@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
+import { File } from '@ionic-native/file';
 
 /**
  * Generated class for the CameraPage page.
@@ -16,7 +17,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 })
 export class CameraPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera) {
+  image_uri: any;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private file: File) {
   }
 
   ionViewDidLoad() {
