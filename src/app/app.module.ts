@@ -1,3 +1,4 @@
+import { CameraPage } from './../pages/camera/camera';
 import { MediaDetailPage } from './../pages/media-detail/media-detail';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, ErrorHandler } from '@angular/core';
@@ -21,7 +22,8 @@ import { MediaServiceProvider } from '../providers/media-service/media-service';
     ContactPage,
     HomePage,
     TabsPage,
-    MediaDetailPage
+    MediaDetailPage,
+    CameraPage
   ],
   imports: [
     BrowserModule,
@@ -35,7 +37,8 @@ import { MediaServiceProvider } from '../providers/media-service/media-service';
     ContactPage,
     HomePage,
     TabsPage,
-    MediaDetailPage
+    MediaDetailPage,
+    CameraPage
   ],
   providers: [
     StatusBar,
