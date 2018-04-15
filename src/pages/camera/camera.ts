@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
@@ -20,7 +20,7 @@ export class CameraPage {
 
   image_uri: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private file: File, private transfer: FileTransfer) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private file: File, private transfer: FileTransfer, private loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
@@ -49,6 +49,13 @@ export class CameraPage {
   //upload image to server
 
   uploadImage() {
+
+    //Show loading
+    let loader = this.loadingCtrl.create({
+      content: "Uploading..."
+    });
+
+    loader.present();
 
     //create file transfer object
     const fileTransfer: FileTransferObject = this.transfer.create();
@@ -80,9 +87,15 @@ export class CameraPage {
       .then((data) => {
         console.log(data);
         console.log("Success");
+
+        //dismiss loader when request finished
+        loader.dismiss();
       }, (err) => {
         console.log(err);
         console.log("Error");
+
+        //dismiss loader when request finished
+        loader.dismiss();
       });
 
   }
