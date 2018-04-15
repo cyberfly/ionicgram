@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { File } from '@ionic-native/file';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
@@ -20,7 +20,7 @@ export class CameraPage {
 
   image_uri: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private file: File, private transfer: FileTransfer, private loadingCtrl: LoadingController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera, private file: File, private transfer: FileTransfer, private loadingCtrl: LoadingController, private toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -90,12 +90,37 @@ export class CameraPage {
 
         //dismiss loader when request finished
         loader.dismiss();
+
+        //show success upload message
+
+        let toast = this.toastCtrl.create({
+          message: 'Image was uploaded successfully',
+          duration: 1500,
+          position: 'bottom'
+        });
+
+        toast.present();
+
+        //reset the image that was taken
+
+        this.image_uri = '';
+
       }, (err) => {
         console.log(err);
         console.log("Error");
 
         //dismiss loader when request finished
         loader.dismiss();
+
+        //show error upload message
+
+        let toast = this.toastCtrl.create({
+          message: err.data.message,
+          duration: 1500,
+          position: 'bottom'
+        });
+
+        toast.present();
       });
 
   }
