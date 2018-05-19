@@ -63,7 +63,7 @@ export class CameraPage {
     //random int
     var random = Math.floor(Math.random() * 100);
 
-    let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9yZXN0YXBpLmpvbXBocC5jb20iLCJpYXQiOjE1MjQ4ODE2MjAsIm5iZiI6MTUyNDg4MTYyMCwiZXhwIjoxNTI1NDg2NDIwLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.f3y3lGV_qQ-CqQ4Qc3FH-qaO_yEWlV6PxUGy1SF3ysA";
+    let token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9yZXN0YXBpLmpvbXBocC5jb20iLCJpYXQiOjE1MjY3MDYzNTcsIm5iZiI6MTUyNjcwNjM1NywiZXhwIjoxNTI3MzExMTU3LCJkYXRhIjp7InVzZXIiOnsiaWQiOiIxIn19fQ.O47sS9T6JRj1Ju6qFJ8H4YXUJpxQRoUbLKbheAf8bUs";
     let bearer_token = "Bearer " + token;
 
     console.log(bearer_token);
